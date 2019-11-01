@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/corners_bg">
+
+        <TextView
+            android:text="预告"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:layout_marginLeft="10dp"
+            />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/now_weather"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:id="@+id/tv_firstday_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="日期"
+                android:textSize="20sp"
+                android:textColor="#fff"/>
+
+            <TextView
+                android:id="@+id/tv_firstday_phe"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@id/tv_firstday_date"
+                android:text="现象"
+                android:textSize="20sp"
+                android:textColor="#fff"/>
+
+            <TextView
+                android:id="@+id/tv_firstday_high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@id/tv_firstday_phe"
+                android:text="最高温度"
+                android:textSize="20sp"
+                android:textColor="#fff"/>
+            <TextView
+                android:id="@+id/tv_firstday_low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@id/tv_firstday_high"
+                android:text="最低温度"
+                android:textSize="20sp"
+                android:textColor="#80FFFFFF"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/now_weather"
+            android:layout_marginTop="20dp"
+            android:id="@+id/second"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:id="@+id/tv_secondday_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="日期"
+                android:textSize="20sp"
+                android:textColor="#fff"
+                />
+
+            <TextView
+                android:id="@+id/tv_secondday_phe"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@id/tv_secondday_date"
+                android:text="现象"
+                android:textSize="20sp"
+                android:textColor="#fff"/>
+
+            <TextView
+                android:id="@+id/tv_secondday_high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@id/tv_secondday_phe"
+                android:text="最高温度"
+                android:textSize="20sp"
+                android:textColor="#fff"/>
+
+            <TextView
+                android:id="@+id/tv_secondday_low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@id/tv_secondday_high"
+                android:text="最低温度"
+                android:textSize="20sp"
+                android:textColor="#80FFFFFF"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@id/second"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:id="@+id/tv_thirdday_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="日期"
+                android:textSize="20sp"
+                android:textColor="#fff"/>
+
+            <TextView
+                android:id="@+id/tv_thirdday_phe"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@id/tv_thirdday_date"
+                android:text="现象"
+                android:textSize="20sp"
+                android:textColor="#fff"/>
+
+            <TextView
+                android:id="@+id/tv_thirdday_high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@id/tv_thirdday_phe"
+                android:text="最高温度"
+                android:textSize="20sp"
+                android:textColor="#fff"/>
+
+            <TextView
+                android:id="@+id/tv_thirdday_low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@id/tv_thirdday_high"
+                android:text="最低温度"
+                android:textSize="20sp"
+                android:textColor="#80FFFFFF"/>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
