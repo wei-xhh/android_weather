@@ -4,29 +4,20 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.example.xhhweather.gson.Weather;
-import com.example.xhhweather.gson.WeatherResDaily;
 import com.example.xhhweather.gson.WeatherResults;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.prefs.PreferencesFactory;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -82,7 +73,7 @@ public class MainActivity extends AppCompatActivity{
         boolean isSelect=prefs.getBoolean("isSelected",false);
 
         if(isSelect && weatherString!=null){
-            Weather weatherInfo=Utility.handleWeatherRsponse(weatherString);
+            Weather weatherInfo= Utility.handleWeatherRsponse(weatherString);
             showWeatherInfo(weatherInfo);
 
         }else{
@@ -144,7 +135,6 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        final ProgressDialogUtil util=new ProgressDialogUtil();
         if(requestCode==1001 && resultCode==1002){
             String cityPinYin=data.getStringExtra("CITYPINYIN");
             weatherTitleCitypinyin.setText(cityPinYin);
@@ -160,7 +150,7 @@ public class MainActivity extends AppCompatActivity{
      */
     public void GetrequestWeather(String cityPinYin){
         String url="https://api.seniverse.com/v3/weather/daily.json?key=SojsF4VNkV_cTQexq&location=" + cityPinYin + "&language=zh-Hans&unit=c&start=0&days=5";
-        final ProgressDialogUtil util=new ProgressDialogUtil();
+        final Utility util=new Utility();
         util.showProgressDialog(MainActivity.this);
         HttpUtil.sendOkHttpRequest(url, new Callback() {
             @Override
@@ -172,7 +162,7 @@ public class MainActivity extends AppCompatActivity{
             public void onResponse(Call call, Response response) throws IOException {
                 final String weatherData=response.body().string();
                 Log.e("MainActivity","得到的数据"+weatherData);
-                final Weather weatherInfo=Utility.handleWeatherRsponse(weatherData);
+                final Weather weatherInfo= Utility.handleWeatherRsponse(weatherData);
                 if(weatherInfo!=null){
                     SharedPreferences.Editor editor= getSharedPreferences("weather",MODE_PRIVATE).edit();
                     editor.putString("WEATHER", weatherData);
